@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time App</title>
+    <title>Akira's Time App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,17 +19,23 @@
             font-size: 24px;
             color: #777;
         }
+        footer {
+            margin-top: 30px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
-    <h1>Current Time:</h1>
+    <h1>Hello, this is Akira's app!</h1>
+    <p>You can check the real-time in France below:</p>
+    <h2>Current Time:</h2>
     <p id="current-time"></p>
 
     <script>
         function updateTime() {
             const currentTimeElement = document.getElementById("current-time");
             const now = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Europe/Paris' };
             const formattedTime = now.toLocaleDateString('en-US', options);
             currentTimeElement.textContent = formattedTime;
         }
@@ -40,5 +46,9 @@
         // Initial update
         updateTime();
     </script>
+
+    <footer>
+        <p>Thank you for using Akira's Time App!</p>
+    </footer>
 </body>
 </html>
