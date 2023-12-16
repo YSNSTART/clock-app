@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 24px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current Time:</h1>
+    <p id="current-time"></p>
+
+    <script>
+        function updateTime() {
+            const currentTimeElement = document.getElementById("current-time");
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            const formattedTime = now.toLocaleDateString('en-US', options);
+            currentTimeElement.textContent = formattedTime;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+
+        // Initial update
+        updateTime();
+    </script>
+</body>
+</html>
